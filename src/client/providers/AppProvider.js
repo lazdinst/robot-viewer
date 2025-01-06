@@ -29,7 +29,7 @@ const AppProvider = ({ children }) => {
   const [{ data: robotTypes, loading: getLoading, error: getError }, getRobotTypes] = useGet();
 
   useEffect(() => {
-    getRobotTypes({ url: `/robots/all` });
+    // getRobotTypes({ url: `/robots/all` });
   }, []);
 
   const selectRobot = useCallback(
@@ -81,7 +81,7 @@ const AppProvider = ({ children }) => {
 
   useState(() => {
     const socket = io(`/client?key=${key}`, {
-      transports: ['websocket'],
+      // transports: ['websocket'],
       secure: true,
     });
     socketRef.current = socket;
