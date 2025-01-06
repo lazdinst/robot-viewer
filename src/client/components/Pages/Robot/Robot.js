@@ -34,8 +34,6 @@ const Control = ({ controlRef, virtualCam }) => {
   const { updateRobot, setBallRef } = useRobotController();
   const { config, dataOpen } = useApp();
 
-  console.log('RENDER ROBOT PAGE');
-
   const { zeroPosition } = config;
 
   const robotUpdate = () => {
