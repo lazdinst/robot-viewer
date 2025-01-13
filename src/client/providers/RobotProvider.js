@@ -188,8 +188,10 @@ const RobotProvider = ({ children }) => {
 
   // Update forward
   const updateForward = () => {
+    console.log('updateForward Kinematics Called');
     const { j0, j1, j2, j3, j4, j5, base, v0, v1, v2, v3, v4, v5, x0, endEffector } =
       formApi.getFormState().values;
+    console.log('Form values:', formApi.getFormState().values);
 
     const robotConfig = {
       base: base,
