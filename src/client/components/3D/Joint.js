@@ -260,8 +260,6 @@ export const Joint = ({
     frames[0]?.r3,
   ]);
 
-  // console.log('HERE', index, v, along, linkPosition);
-
   const lastFrame = !frames[0];
 
   const rangeError = config[`rangej${index}`] && outside(jRotation, config[`rangej${index}`]);

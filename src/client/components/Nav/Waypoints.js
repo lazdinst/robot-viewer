@@ -125,7 +125,7 @@ export const Waypoints = ({ currentWaypoints, column, getAllWaypoints }) => {
   const [{ error: postError, loading: postLoading }, postWaypoints] = usetPost({
     headers: { ContentType: 'application/json' },
     onComplete: () => {
-      getAllWaypoints({ url: `/waypoints/all` });
+      // getAllWaypoints({ url: `/waypoints/all` });
     },
   });
 

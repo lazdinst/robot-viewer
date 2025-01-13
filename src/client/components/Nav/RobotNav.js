@@ -170,13 +170,14 @@ export const RobotNav = () => {
     }
   }, [selectedRobotMeta]);
 
-  console.log('RENDER ROBOT NAV');
-
   // Grab ranges off of config
   const { units, zeroPosition, frames } = config;
 
   const robotUpdate = () => {
-    // Get pos
+    // Step 3: This robot update method is called from the onValueChange
+    // it grabs the form values and passes it to the next updateRobot method
+    // from the RobotProvider context
+    console.log('Robot Update: Cartesian Update');
     const { x, y, z, r1, r2, r3 } = formApi.getFormState().values;
 
     // Update the robot
@@ -382,8 +383,10 @@ export const RobotNav = () => {
     cameraControl.current.current.position.set(90, 100, 90);
   };
 
+  // Step 1: onValueChange is called when the form elements change
   const onValueChange = (name) => () => {
     if (triggers.includes(name)) {
+      // Step 2: This calls the robotUpdate method
       robotUpdate();
     }
   };
@@ -1408,6 +1411,7 @@ export const RobotNav = () => {
                 }
                 return (
                   <ActionButton
+                    key={`${i}:something`}
                     width="size-900"
                     onPress={() => toggleAxis(`j${i}`)}
                     isQuiet={!floating[`j${i}`]}

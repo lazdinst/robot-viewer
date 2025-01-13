@@ -192,7 +192,7 @@ export const Cookbook = () => {
   const [{ data: allWaypoints, loading, error }, getWaypoints] = useGet();
 
   useEffect(() => {
-    getWaypoints({ url: `/waypoints/all` });
+    // getWaypoints({ url: `/waypoints/all` });
   }, []);
 
   return (
